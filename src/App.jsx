@@ -7,40 +7,48 @@ const App = () => {
   const [price,setPrice] = useState(0)
   const [credit, setCredit] = useState(0)
   const [creditRemaining, setCreditRemaining] = useState(20)
-//  console.log(price)
+
    // add to bookmark
    const hundleBookmark = (course) =>{
-    // console.log(course.price)
-    const addBookmark = [...bookmarks,course]
-    setBookmarks(addBookmark)
-
-    // total price
-    const totalPrice = price + course.price;
-    setPrice(parseInt(totalPrice + .1))
-
-    // // total credit hour
-    // const totalCredit = credit + course.credit;
-    // if (totalCredit <= 20){
-    //   setCredit(totalCredit)
-    // }else if (totalCredit >= 20){
-    //   alert("Total credit is over")
-    // }
-
-    // // total credit remaining hour
-    // const totalCreditRemaining = creditRemaining - course.credit;
-    // if(totalCreditRemaining >= 0){
-    //   setCreditRemaining(totalCreditRemaining)
-    // }
-
       // total credit hour
       const totalCredit = credit + course.credit;
       const totalCreditRemaining = creditRemaining - course.credit;
+
       if (totalCredit <= 20 && totalCreditRemaining >= 0){
         setCredit(totalCredit)
         setCreditRemaining(totalCreditRemaining)
+
+       
+        const addBookmark = [...bookmarks, course]
+        // console.log(addBookmark)
+
+        addBookmark.forEach((bookmark)=>{
+          if(!bookmarks.includes(bookmark)){
+            setBookmarks(addBookmark)
+          }
+        })
+
+      const totalPrice = price + course.price;
+        setPrice(parseInt(totalPrice + .1))
       }else{
         alert('your remaining credit is 0')
       }
+  }
+
+  const removeFromBookmark = (id,bookmark) =>{
+    const filteredData = bookmarks.filter((bookmark)=> bookmark.id !==id)
+    setBookmarks(filteredData)
+
+    const totalCredit = credit - bookmark.credit;
+    const totalCreditRemaining = creditRemaining + bookmark.credit;
+
+    if (totalCredit >= 0 && totalCreditRemaining <= 20){
+      setCredit(totalCredit)
+      setCreditRemaining(totalCreditRemaining)
+
+    const totalPrice = price - bookmark.price;
+      setPrice(parseInt(totalPrice + .1))
+    }
 }
 
   return (
@@ -52,10 +60,15 @@ const App = () => {
           price = {price}
           credit = {credit}
           creditRemaining = {creditRemaining}
+          removeFromBookmark = {removeFromBookmark}
           />
       </div>
     </div>
   );
+
 };
 
 export default App;
+
+
+

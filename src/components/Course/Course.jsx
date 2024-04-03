@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import { FiDollarSign } from "react-icons/fi";
 import { IoBookOutline } from "react-icons/io5";
 
-
 const Course = ({course, hundleBookmark}) => {
     // console.log(course)
     const {img, course_name,details,price,credit} = course;
