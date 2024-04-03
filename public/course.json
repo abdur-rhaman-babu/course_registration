@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "img": "https://i.postimg.cc/3rjdvn7c/programming.jpg",
+    "course_name": "Introduction to Programming",
+    "credit": 3,
+    "price": 49.99,
+    "details": "This beginner-friendly course covers the basics of programming using Python."
+  },
+  {
+    "id": 2,
+    "img": "https://i.postimg.cc/fb6JxPJ6/web-development.png",
+    "course_name": "Web Development",
+    "credit": 4,
+    "price": 69.99,
+    "details": "Explore the foundational concepts of web development, including HTML, CSS, and JavaScript."
+  },
+  {
+    "id": 3,
+    "img": "https://i.postimg.cc/fTwkjmRT/data-science.jpg",
+    "course_name": "Data Science Essentials",
+    "credit": 5,
+    "price": 99.99,
+    "details": "Gain a comprehensive understanding of data science techniques and tools."
+  },
+  {
+    "id": 4,
+    "img": "https://i.postimg.cc/zBK3pkh3/mechine-learning.png",
+    "course_name": "Mechine Learning",
+    "credit": 4,
+    "price": 79.99,
+    "details": "Embark on an introductory journey into machine learning, covering algorithms and applications."
+  },
+  {
+    "id": 5,
+    "img": "https://i.postimg.cc/sDwxnxMP/mobile-app.jpg",
+    "course_name": "Mobile App Development",
+    "credit": 4,
+    "price": 89.99,
+    "details": "Develop mobile applications for iOS and Android platforms effectively."
+  },
+  {
+    "id": 6,
+    "img": "https://i.postimg.cc/gjpj76ys/database.png",
+    "course_name": "Database Management",
+    "credit": 3,
+    "price": 59.99,
+    "details": "Master the concepts and techniques of managing databases efficiently."
+  },
+  {
+    "id": 7,
+    "img": "https://i.postimg.cc/vZ21mTM8/Cybersecurity-Fundamentals.png",
+    "course_name": "Cybersecurity Fundamentals",
+    "credit": 4,
+    "price": 79.99,
+    "details": "Understand the basics of cybersecurity and learn to protect digital assets."
+  },
+  {
+    "id": 8,
+    "img": "https://i.postimg.cc/hGJXQnPL/graphics-design.png",
+    "course_name": "Graphics Design",
+    "credit": 3,
+    "price": 49.99,
+    "details": "Explore the fundamental principles and techniques of graphic design."
+  },
+  {
+    "id": 9,
+    "img": "https://i.postimg.cc/4y1yRNBg/Digital-marketing.png",
+    "course_name": "Digital Marketing",
+    "credit": 4,
+    "price": 69.99,
+    "details": "Learn effective strategies for marketing products and services online."
+  }
+]
