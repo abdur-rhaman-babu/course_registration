@@ -8,31 +8,31 @@ const App = () => {
   const [credit, setCredit] = useState(0)
   const [creditRemaining, setCreditRemaining] = useState(20)
 
+  // console.log(bookmarks)
    // add to bookmark
    const hundleBookmark = (course) =>{
       // total credit hour
       const totalCredit = credit + course.credit;
       const totalCreditRemaining = creditRemaining - course.credit;
 
-      if (totalCredit <= 20 && totalCreditRemaining >= 0){
-        setCredit(totalCredit)
-        setCreditRemaining(totalCreditRemaining)
-
-       
         const addBookmark = [...bookmarks, course]
-        // console.log(addBookmark)
-
-        addBookmark.forEach((bookmark)=>{
-          if(!bookmarks.includes(bookmark)){
-            setBookmarks(addBookmark)
-          }
+        const uniqueId = []
+        bookmarks.map((bookmark)=>{
+          uniqueId.push(bookmark.id)
         })
+       
+          if((!uniqueId.includes(course.id)) && (totalCredit <= 20 && totalCreditRemaining >= 0)){
+            setBookmarks(addBookmark)
+            const totalPrice = price + course.price;
+            setPrice(parseInt(totalPrice + .1))
 
-      const totalPrice = price + course.price;
-        setPrice(parseInt(totalPrice + .1))
-      }else{
-        alert('your remaining credit is 0')
-      }
+            setCredit(totalCredit)
+            setCreditRemaining(totalCreditRemaining)
+
+            }
+            else{
+            alert('something is wrong went')
+            }
   }
 
   const removeFromBookmark = (id,bookmark) =>{
@@ -47,7 +47,7 @@ const App = () => {
       setCreditRemaining(totalCreditRemaining)
 
     const totalPrice = price - bookmark.price;
-      setPrice(parseInt(totalPrice + .1))
+    setPrice(parseInt(totalPrice + .1))
     }
 }
 
