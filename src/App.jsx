@@ -8,7 +8,6 @@ const App = () => {
   const [credit, setCredit] = useState(0)
   const [creditRemaining, setCreditRemaining] = useState(20)
 
-  // console.log(bookmarks)
    // add to bookmark
    const hundleBookmark = (course) =>{
       // total credit hour
@@ -16,11 +15,25 @@ const App = () => {
       const totalCreditRemaining = creditRemaining - course.credit;
 
         const addBookmark = [...bookmarks, course]
+        
         const uniqueId = []
         bookmarks.map((bookmark)=>{
           uniqueId.push(bookmark.id)
         })
        
+          // if((!uniqueId.includes(course.id)) && (totalCredit <= 20 && totalCreditRemaining >= 0)){
+          //   setBookmarks(addBookmark)
+          //   const totalPrice = price + course.price;
+          //   setPrice(parseInt(totalPrice + .1))
+
+          //   setCredit(totalCredit)
+          //   setCreditRemaining(totalCreditRemaining)
+
+          //   }
+          //   else{
+          //   alert('something is wrong went')
+          //   }
+
           if((!uniqueId.includes(course.id)) && (totalCredit <= 20 && totalCreditRemaining >= 0)){
             setBookmarks(addBookmark)
             const totalPrice = price + course.price;
@@ -28,11 +41,12 @@ const App = () => {
 
             setCredit(totalCredit)
             setCreditRemaining(totalCreditRemaining)
-
-            }
-            else{
-            alert('something is wrong went')
-            }
+          }else if(uniqueId.includes(course.id)){
+            alert('This course already added')
+          }
+          else{
+            alert('insufficient credit')
+          }
   }
 
   const removeFromBookmark = (id,bookmark) =>{
